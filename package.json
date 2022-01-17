@@ -1,0 +1,31 @@
+{
+  "name": "@vbs/utils",
+  "version": "1.0.6",
+  "description": "Team front end tool library",
+  "main": "dist/index.js",
+  "keywords": [
+    "utils",
+    "@vbs/utils"
+  ],
+  "scripts": {
+    "serve": "cross-env NODE_ENV=development rollup -c -w",
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.6.0",
+    "jest": "^27.4.7",
+    "rollup": "^2.63.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript": "^1.0.1",
+    "ts-jest": "^27.1.2",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.4"
+  }
+}
