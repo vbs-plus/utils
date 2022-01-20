@@ -1,6 +1,6 @@
 {
   "name": "@vbs/utils",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Team front end tool library",
   "main": "dist/index.js",
   "keywords": [

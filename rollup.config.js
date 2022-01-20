@@ -12,13 +12,21 @@ if (process.env.NODE_ENV === 'production') plugins.push(terser());
 export default [
   {
     input: 'src/index.ts',
-    output: {
-      // 将插件挂载到 window 上: window.VUtils
-      name: 'VUtils',
-      file: 'dist/index.js',
-      format: 'umd',
-      exports: 'auto'
-    },
+    output: [
+      {
+        // 将插件挂载到 window 上: window.VUtils
+        name: 'VUtils',
+        file: 'dist/index.js',
+        format: 'umd',
+        exports: 'auto'
+      },
+      {
+        name: 'VUtilsTs',
+        file: 'dist/index.d.ts',
+        format: 'umd',
+        exports: 'auto'
+      },
+    ],
     plugins
   },
 ]
