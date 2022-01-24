@@ -14,12 +14,15 @@ export default [
     input: 'src/index.ts',
     output: [
       {
+        file: 'dist/index.esm.js', // package.json 中 "module": "dist/index.esm.js"
+        format: 'esm', // es module 形式的包， 用来import 导入，可以 tree shaking
+      },
+      {
         // 将插件挂载到 window 上: window.VUtils
-        file: 'dist/index.js',
+        file: 'dist/index.umd.js',
         format: 'umd',
         name: 'VUtils',
-        inlineDynamicImports: true,
-      }
+      },
     ],
     plugins
   },
