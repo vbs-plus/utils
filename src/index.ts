@@ -3,6 +3,7 @@ import getType from './type/getType';
 import isQQ from './validate/isQQ';
 import isPhone from './validate/isPhone';
 import isCard from './validate/isCard';
+import isEmail from './validate/isEmail';
 
 import compressImage from './method/compressImage';
 import parseUrl from './method/parseUrl';
@@ -14,4 +15,5 @@ export {
   compressImage,
   isPhone,
   isCard,
+  isEmail,
 };
