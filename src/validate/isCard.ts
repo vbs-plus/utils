@@ -6,7 +6,7 @@ import getType from '../type/getType';
  * @return {*}
  */
 export default (data: string): boolean => {
-  const dataType = getType(data);
-  if (dataType !== 'string') throw new Error(`Expected parameter type is string, You passed in ${dataType}`);
-  return /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(String(data));
+  const dataType = getType(data);   
+  if (dataType !== 'string') return false;     
+  return /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(data);
 };

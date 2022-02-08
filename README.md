@@ -2,48 +2,24 @@
 
 Team front end tool library
 
-## 本地开发
+[![npm version](https://badge.fury.io/js/@vbs%2Futils.svg)](https://badge.fury.io/js/@vbs%2Futils)
+[![GitHub issues](https://img.shields.io/github/issues/vbs-plus/utils)](https://github.com/vbs-plus/utils/issues)
+[![GitHub forks](https://img.shields.io/github/forks/vbs-plus/utils)](https://github.com/vbs-plus/utils/network)
+[![GitHub stars](https://img.shields.io/github/stars/vbs-plus/utils)](https://github.com/vbs-plus/utils/stargazers)
+[![GitHub license](https://img.shields.io/github/license/vbs-plus/utils)](https://github.com/vbs-plus/utils/blob/main/LICENSE)
 
-```sh
-npm run serve
-```
-
-## 打包成生产（压缩）文件
-
-```sh
-npm run build
-```
-
-## 单元测试
-
-```sh
-npm run test
-```
-
-## 安装
+## Install
 
 ```sh
 npm i @vbs/utils -S
 ```
 
-## API
+## Use
 
-- 校验
-  1. isQQ: (data: string | number) => boolean 校验是否是QQ号
-  2. isPhone: (data: string | number) => boolean 校验是否是手机号
-  3. isCard: (data: string) => boolean 校验是否是身份证号
-- 类型
-  1. getType: (data: any) => dataType 获取数据类型
-- 函数
-  1. compressImage: (file: File) => Promise\<File\> 压缩图片
-  2. parseUrl: (url: string) => object 获取 URL 的相关对象
-
-## 使用
-
-### 方式一，通过 script 标签引入
+### Mode 1
 
 ```html
-<script src="//cdn.jsdelivr.net/npm/@vbs/utils/dist/index.js"></script>
+<script src="//cdn.jsdelivr.net/npm/@vbs/utils/dist/index.umd.js"></script>
 <script>
   console.log(window.VUtils)
   const { isQQ, getType } = window.VUtils;
@@ -56,7 +32,7 @@ npm i @vbs/utils -S
 </script>
 ```
 
-### 方式二，通过模块化引入
+### Mode 2
 
 ```javascript
 import { isQQ, getType } from '@vbs/utils';
@@ -67,3 +43,17 @@ console.log(isQQ(1000)); // false
 console.log(getType(true)); // boolean
 console.log(getType(0)); // number
 ```
+
+
+## API
+
+- 校验
+  1. isQQ: (data: string | number) => boolean 校验是否是QQ号
+  2. isPhone: (data: string | number) => boolean 校验是否是手机号
+  3. isCard: (data: string) => boolean 校验是否是身份证号
+  4. isEmail: (data: string) => boolean 校验是否是邮箱
+- 类型
+  1. getType: (data: any) => dataType 获取数据类型
+- 函数
+  1. compressImage: (file: File) => Promise\<File\> 压缩图片
+  2. parseUrl: (url: string) => object 获取 URL 的相关对象
