@@ -9,11 +9,20 @@
 </head>
 
 <body>
+  <input id="file" type="file">
   <script src="../dist/index.umd.js"></script>
   <script>
-    console.log(window.VUtils);
-    const { parseUrl } = window.VUtils;
-    console.log(parseUrl('http://localhost:8080/settlement/upload?key=1'));
+    const { compressImage } = window.VUtils;
+
+    file.onchange = (e) => {
+      console.log(e.target.files[0]);
+      compressImage(e.target.files[0], 0.1)
+        .then(res => {
+          console.log(res);
+        }).catch((err) => {
+          console.log(err);
+        })
+    }
   </script>
 </body>
 

@@ -7,6 +7,8 @@ import isEmail from './validate/isEmail';
 
 import compressImage from './method/compressImage';
 import parseUrl from './method/parseUrl';
+import dataURLtoBlob from './method/dataURLtoBlob';
+import dataURLtoFile from './method/dataURLtoFile';
 
 export {
   getType,
@@ -16,4 +18,6 @@ export {
   isPhone,
   isCard,
   isEmail,
+  dataURLtoBlob,
+  dataURLtoFile,
 };
