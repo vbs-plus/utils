@@ -1,4 +1,4 @@
-import getType from '../type/getType';
+import getType from "../type/getType";
 
 /**
  * @description: 校验是否为邮箱
@@ -7,6 +7,6 @@ import getType from '../type/getType';
  */
 export default (data: string): boolean => {
   const dataType = getType(data);
-  if (dataType !== 'string') return false;
+  if (dataType !== "string") return false;
   return /^[.a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(data);
 };

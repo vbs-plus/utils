@@ -1,12 +1,12 @@
 import getType from "../type/getType";
 
 /**
- * @description: 检测是否为手机号
+ * @description: 校验是否是银行卡
  * @param {string | number} data
  * @return {boolean}
  */
 export default (data: string | number): boolean => {
   const dataType = getType(data);
   if (dataType !== "string" && dataType !== "number") return false;
-  return /^1[3456789]\d{9}$/.test(String(data));
+  return /^\d{16,20}$/.test(String(data));
 };

@@ -5,6 +5,6 @@
  */
 export default (data: unknown): string => {
   const toStingResult = Object.prototype.toString.call(data);
-  const type = toStingResult.replace(/^\[object (\w+)\]$/, '$1');
+  const type = toStingResult.replace(/^\[object (\w+)\]$/, "$1");
   return type.toLowerCase();
 };

@@ -1,11 +1,11 @@
-import { parseUrl } from '../src/index';
+import { parseUrl } from "../src/index";
 
 test("parseUrl('xxx')", () => {
-  expect(parseUrl('xxx')).toBeNull()
+  expect(parseUrl("xxx")).toBeNull();
 });
 
 test("parseUrl('http://localhost:8080/settlement/upload?key=1')", () => {
-  expect(parseUrl('http://localhost:8080/settlement/upload?key=1')).toEqual({
+  expect(parseUrl("http://localhost:8080/settlement/upload?key=1")).toEqual({
     hash: "",
     host: "localhost:8080",
     hostname: "localhost",
@@ -17,4 +17,3 @@ test("parseUrl('http://localhost:8080/settlement/upload?key=1')", () => {
     search: "?key=1",
   });
 });
-
