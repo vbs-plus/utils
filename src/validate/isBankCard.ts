@@ -8,5 +8,5 @@ import getType from "../type/getType";
 export default (data: string | number): boolean => {
   const dataType = getType(data);
   if (dataType !== "string" && dataType !== "number") return false;
-  return /^\d{16,20}$/.test(String(data));
+  return /^\d{16,19}$/.test(String(data));
 };
