@@ -10,10 +10,10 @@
     "@vbs/utils"
   ],
   "scripts": {
-    "serve": "cross-env NODE_ENV=development rollup -c -w",
-    "build": "cross-env NODE_ENV=production rollup -c",
     "test": "jest",
     "lint": "eslint . --ext .js,.ts --fix",
+    "serve": "cross-env NODE_ENV=development rollup -c -w",
+    "build": "cross-env NODE_ENV=production rollup -c",
     "prePublish": "npm run test && npm run lint && npm run build"
   },
   "devDependencies": {
