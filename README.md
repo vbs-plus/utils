@@ -63,7 +63,7 @@ console.log(getType(0)); // number
 - 校验
   1. isQQ: (data: string | number) => boolean 校验是否是 QQ 号
   2. isPhone: (data: string | number) => boolean 校验是否是手机号
-  3. isCard: (data: string) => boolean 校验是否是身份证号
+  3. isIDCard: (data: string) => boolean 校验是否是身份证号
   4. isEmail: (data: string) => boolean 校验是否是邮箱
   5. isBankCard: (data: string|number) => boolean 校验是否是银行卡
 - 类型

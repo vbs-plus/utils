@@ -1,21 +1,21 @@
-import { isCard } from "../src/index";
+import { isIDCard } from "../src/index";
 
-test("isCard('hello')", () => {
-  expect(isCard("hello")).toBeFalsy();
+test("isIDCard('hello')", () => {
+  expect(isIDCard("hello")).toBeFalsy();
 });
 
-test("isCard('120101198001010012')", () => {
-  expect(isCard("120101198001010012")).toBeTruthy();
+test("isIDCard('120101198001010012')", () => {
+  expect(isIDCard("120101198001010012")).toBeTruthy();
 });
 
-test("isCard('12010119800101809X')", () => {
-  expect(isCard("12010119800101809X")).toBeTruthy();
+test("isIDCard('12010119800101809X')", () => {
+  expect(isIDCard("12010119800101809X")).toBeTruthy();
 });
 
-test("isCard('12010119800101833x')", () => {
-  expect(isCard("12010119800101833x")).toBeTruthy();
+test("isIDCard('12010119800101833x')", () => {
+  expect(isIDCard("12010119800101833x")).toBeTruthy();
 });
 
-test("isCard('12010119800101829')", () => {
-  expect(isCard("12010119800101829")).toBeFalsy();
+test("isIDCard('12010119800101829')", () => {
+  expect(isIDCard("12010119800101829")).toBeFalsy();
 });
