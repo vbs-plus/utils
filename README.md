@@ -68,8 +68,10 @@ console.log(getType(0)); // number
   5. isBankCard: (data: string|number) => boolean 校验是否是银行卡
 - 类型
   1. getType: (data: unknown) => string 获取数据类型
-- 函数
+- 方法
   1. compressImage: (file: File, quality = 1) => Promise\<File\> | Error 压缩图片
   2. parseUrl: (url: string) => object | null 获取 URL 的相关对象
   3. dataURLtoBlob: (dataURL: string) => Blob | null 将 Base64 字符串转为 Blob 对象
   4. dataURLtoFile: (dataURL: string, fileName: string) => File | null 将 Base64 字符串转为 File 对象
+- 函数
+  1. cloneDeep: (data: Array<unknown> | Record<string | number, unknown>) => Array<unknown> | Record<string | number, unknown>
