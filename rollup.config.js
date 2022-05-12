@@ -1,11 +1,15 @@
 import typescript from "rollup-plugin-typescript2";
 import { terser } from "rollup-plugin-terser";
+import { babel } from "@rollup/plugin-babel";
 
 // 插件列表
 const plugins = [typescript()];
 
 // 生产环境加入代码压缩功能
-if (process.env.NODE_ENV === "production") plugins.push(terser());
+if (process.env.NODE_ENV === "production") {
+  plugins.push(terser());
+  plugins.push(babel({ babelHelpers: "bundled" }));
+}
 
 export default [
   {
