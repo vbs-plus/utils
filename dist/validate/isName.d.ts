@@ -1,7 +1,7 @@
 /**
- * @description: 校验是否为身份证
+ * @description: 检测是否为中文姓名
  * @param {string} data
- * @return {*}
+ * @return {boolean}
  */
 declare const _default: (data: string) => boolean;
 export default _default;

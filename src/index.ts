@@ -5,6 +5,7 @@ import isPhone from "./validate/isPhone";
 import isIDCard from "./validate/isIDCard";
 import isEmail from "./validate/isEmail";
 import isBankCard from "./validate/isBankCard";
+import isName from "./validate/isName";
 
 import compressImage from "./method/compressImage";
 import parseUrl from "./method/parseUrl";
@@ -13,4 +14,4 @@ import dataURLtoFile from "./method/dataURLtoFile";
 
 import cloneDeep from "./function/cloneDeep";
 
-export { getType, isQQ, parseUrl, compressImage, isPhone, isIDCard, isEmail, isBankCard, dataURLtoBlob, dataURLtoFile, cloneDeep };
+export { getType, isQQ, isName, isPhone, isIDCard, isEmail, isBankCard, parseUrl, compressImage, dataURLtoBlob, dataURLtoFile, cloneDeep };
