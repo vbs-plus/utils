@@ -66,7 +66,7 @@ console.log(getType(0)); // number
   3. isIDCard: (data: string) => boolean 校验是否是身份证号
   4. isEmail: (data: string) => boolean 校验是否是邮箱
   5. isBankCard: (data: string|number) => boolean 校验是否是银行卡
-  6. isName: (data: string) => boolean 校验是否是中国人姓名
+  6. isName: (data: string, type: "CN" | "EN") => boolean 校验是否是姓名
 - 类型
   1. getType: (data: unknown) => string 获取数据类型
 - 方法
