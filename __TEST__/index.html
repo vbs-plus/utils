@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <input accept="image/*" type="file" id="input" />
+
+    <hr />
+
+    原图片:
+    <div id="oldFile"></div>
+
+    <br />
+
+    压缩图片:
+    <div id="newFile"></div>
+
+    <script src="../dist/index.umd.js"></script>
+    <script>
+      input.onchange = async (e) => {
+        const oldFiles = e.target.files[0];
+        const newFiles = await VUtils.compressImage(oldFiles, 0.1);
+        oldFile.innerHTML = `
+          lastModified: ${oldFiles.lastModified} <br />
+          lastModifiedDate: ${oldFiles.lastModifiedDate} <br />
+          name: ${oldFiles.name} <br />
+          size: ${oldFiles.size} <br />
+          type: ${oldFiles.type} <br />
+        `;
+        newFile.innerHTML = `
+          lastModified: ${newFiles.lastModified} <br />
+          lastModifiedDate: ${newFiles.lastModifiedDate} <br />
+          name: ${newFiles.name} <br />
+          size: ${newFiles.size} <br />
+          type: ${newFiles.type} <br />
+        `;
+      };
+    </script>
+  </body>
+</html>
