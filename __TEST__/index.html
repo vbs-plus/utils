@@ -27,7 +27,11 @@
     <script>
       input.onchange = async (e) => {
         const oldFiles = e.target.files[0];
+
+        console.time("compressImage");
         const newFiles = await VUtils.compressImage(oldFiles, 0.1);
+        console.timeEnd("compressImage");
+
         oldFile.innerHTML = `
           lastModified: ${oldFiles.lastModified} <br />
           lastModifiedDate: ${oldFiles.lastModifiedDate} <br />
@@ -35,6 +39,7 @@
           size: ${oldFiles.size} <br />
           type: ${oldFiles.type} <br />
         `;
+
         newFile.innerHTML = `
           lastModified: ${newFiles.lastModified} <br />
           lastModifiedDate: ${newFiles.lastModifiedDate} <br />
