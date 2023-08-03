@@ -45,7 +45,7 @@ export default (code: string): boolean => {
     "83": "中国台湾",
     "91": "国外 ",
   };
-  if (!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)) {
+  if (!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)) {
     console.log("格式错误");
     return false;
   }

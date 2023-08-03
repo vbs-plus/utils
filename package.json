@@ -1,6 +1,6 @@
 {
   "name": "@vbs/utils",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Team front end tool library",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
