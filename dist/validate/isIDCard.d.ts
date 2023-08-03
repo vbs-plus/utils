@@ -3,5 +3,5 @@
  * @param {string} data
  * @return {*}
  */
-declare const _default: (data: string) => boolean;
+declare const _default: (code: string) => boolean;
 export default _default;
