@@ -8,7 +8,8 @@ import getType from "../type/getType";
 export default (code: string): boolean => {
   const dataType = getType(code);
   if (dataType !== "string") return false;
-  const city: { [key: string]: string } = {
+  code = code.toUpperCase();
+  const citys = {
     "11": "北京",
     "12": "天津",
     "13": "河北",
@@ -43,24 +44,13 @@ export default (code: string): boolean => {
     "81": "中国香港",
     "82": "中国澳门",
     "83": "中国台湾",
-    "91": "国外 ",
+    "91": "国外",
   };
-  if (!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)) {
-    console.log("格式错误");
-    return false;
-  }
-
-  if (!city[code.slice(0, 2)]) {
-    console.log("地址编码错误");
-    return false;
-  }
-  if (code.length !== 18) return false;
+  if (!/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)) return false;
+  if (!Object.prototype.hasOwnProperty.call(citys, code.slice(0, 2))) return false;
   const sBirthday = code.slice(6, 10) + "-" + Number(code.slice(10, 12)) + "-" + Number(code.slice(12, 14));
   const d = new Date(sBirthday.replace(/-/g, "/"));
-  if (sBirthday != d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate()) {
-    console.log("非法生日");
-    return false;
-  }
+  if (sBirthday != d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate()) return false;
   const arr = code.split("");
   // ∑(ai×Wi)(mod 11)
   // 加权因子
@@ -76,9 +66,6 @@ export default (code: string): boolean => {
     sum += ai * wi;
   }
   const last = parity[sum % 11];
-  if (last != arr[17]) {
-    console.log("校验位错误");
-    return false;
-  }
+  if (last != arr[17]) return false;
   return true;
 };
