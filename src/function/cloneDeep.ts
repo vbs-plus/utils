@@ -14,7 +14,7 @@ const cloneDeep = <T>(data: T): T => {
       const value = data[key];
       const valueType = getType(value);
       if (valueType !== "array" && valueType !== "object") result[key] = value;
-      else result[key] = cloneDeep(<T>value);
+      else result[key] = cloneDeep(value);
     }
   }
   return result as T;
