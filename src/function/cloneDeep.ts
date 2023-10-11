@@ -5,11 +5,10 @@ import getType from "../type/getType";
  * @param {*}
  * @return {*}
  */
-type T = Array<unknown> | Record<string | number, unknown>;
-const cloneDeep = (data: T): T => {
+const cloneDeep = <T>(data: T): T => {
   const dataType = getType(data);
   if (dataType !== "array" && dataType !== "object") return data;
-  const result: T = dataType === "array" ? [] : {};
+  const result: Record<string, any> | T = dataType === "array" ? [] : {};
   for (const key in data) {
     if (Object.prototype.hasOwnProperty.call(data, key)) {
       const value = data[key];
@@ -18,6 +17,7 @@ const cloneDeep = (data: T): T => {
       else result[key] = cloneDeep(<T>value);
     }
   }
-  return result;
+  return result as T;
 };
+
 export default cloneDeep;

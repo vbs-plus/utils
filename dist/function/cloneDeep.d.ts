@@ -3,6 +3,5 @@
  * @param {*}
  * @return {*}
  */
-type T = Array<unknown> | Record<string | number, unknown>;
-declare const cloneDeep: (data: T) => T;
+declare const cloneDeep: <T>(data: T) => T;
 export default cloneDeep;
